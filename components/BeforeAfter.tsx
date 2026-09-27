@@ -15,7 +15,7 @@ export function BeforeAfter() {
           <span>Representação após revestimento</span>
         </div>
         <div className="before-after__divider" aria-hidden="true">
-          <i>↔</i>
+          <i className="before-after__arrows" aria-hidden="true" />
         </div>
         <input
           type="range"

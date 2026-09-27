@@ -14,7 +14,7 @@ export function QuoteForm() {
   if (status === "sent") {
     return (
       <div className="form-success" role="status">
-        <span>✓</span>
+        <span className="form-success__check" aria-hidden="true" />
         <h3>Escopo preparado.</h3>
         <p>A versão local não envia dados. Para falar agora, ligue para (21) 3448-7320 ou escreva para primapox@primapox.com.</p>
         <button type="button" onClick={() => setStatus("idle")}>Preencher novamente</button>
@@ -68,7 +68,7 @@ export function QuoteForm() {
       </label>
       <div className="quote-form__submit">
         <p>Ao enviar, você concorda com o uso dos dados para retorno sobre esta solicitação.</p>
-        <button className="button button--red" type="submit">Preparar solicitação <span aria-hidden="true">↗</span></button>
+        <button className="button button--red" type="submit">Preparar solicitação <span className="icon icon--north-east" aria-hidden="true" /></button>
       </div>
     </form>
   );

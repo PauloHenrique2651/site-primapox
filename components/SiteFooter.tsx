@@ -32,7 +32,7 @@ export function SiteFooter() {
           <h2>Visite a Primapox</h2>
           <p>{company.address}</p>
           <a href={company.mapsUrl} target="_blank" rel="noreferrer">
-            Traçar rota <span aria-hidden="true">↗</span>
+            Traçar rota <span className="icon icon--north-east" aria-hidden="true" />
           </a>
         </div>
         <iframe

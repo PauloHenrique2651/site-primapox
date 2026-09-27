@@ -20,8 +20,8 @@ export default function HomePage() {
             <h1>Proteção que adere.<br /><em>Qualidade que permanece.</em></h1>
             <p className="hero__copy">Revestimento técnico para componentes metálicos, com cobertura uniforme, alta resistência e acabamento de alto padrão.</p>
             <div className="hero__actions">
-              <Link className="button button--red" href="/contato">Solicitar orçamento <span aria-hidden="true">↗</span></Link>
-              <Link className="button button--ghost" href="/galeria">Ver trabalhos <span aria-hidden="true">→</span></Link>
+              <Link className="button button--red" href="/contato">Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" /></Link>
+              <Link className="button button--ghost" href="/galeria">Ver trabalhos <span className="icon" aria-hidden="true" /></Link>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function HomePage() {
               {benefits.map((benefit, index) => (
                 <div key={benefit}><span>0{index + 1}</span><p>{benefit}</p></div>
               ))}
-              <Link className="text-link" href="/solucoes/pintura-eletrostatica-a-po">Ver solução completa <span aria-hidden="true">↗</span></Link>
+              <Link className="text-link" href="/solucoes/pintura-eletrostatica-a-po">Ver solução completa <span className="icon icon--north-east" aria-hidden="true" /></Link>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <Link className="text-link text-link--light process-section__link" href="/processo">Acompanhar o processo completo <span aria-hidden="true">↗</span></Link>
+          <Link className="text-link text-link--light process-section__link" href="/processo">Acompanhar o processo completo <span className="icon icon--north-east" aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -122,7 +122,7 @@ export default function HomePage() {
             aside={<p>Uma seleção do acervo histórico da Primapox: linha produtiva, componentes e aplicações finalizadas.</p>}
           />
           <IndustrialGallery preview />
-          <Link className="text-link gallery-preview-section__link" href="/galeria">Explorar as 46 fotos <span aria-hidden="true">↗</span></Link>
+          <Link className="text-link gallery-preview-section__link" href="/galeria">Explorar as 46 fotos <span className="icon icon--north-east" aria-hidden="true" /></Link>
         </div>
       </section>
 

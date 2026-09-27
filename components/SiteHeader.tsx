@@ -35,7 +35,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link className="header-cta" href="/contato">
-          Solicitar orçamento <span aria-hidden="true">↗</span>
+          Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" />
         </Link>
         <button
           className="menu-button"

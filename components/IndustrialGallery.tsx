@@ -61,13 +61,13 @@ export function IndustrialGallery({ preview = false }: { preview?: boolean }) {
       </div>
       {selected && (
         <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={selected.alt} onClick={() => setSelected(null)}>
-          <button className="gallery-lightbox__close" type="button" onClick={() => setSelected(null)} aria-label="Fechar imagem">×</button>
-          <button className="gallery-lightbox__nav gallery-lightbox__nav--prev" type="button" onClick={(event) => { event.stopPropagation(); move(-1); }} aria-label="Imagem anterior">←</button>
+          <button className="gallery-lightbox__close" type="button" onClick={() => setSelected(null)} aria-label="Fechar imagem" />
+          <button className="gallery-lightbox__nav gallery-lightbox__nav--prev" type="button" onClick={(event) => { event.stopPropagation(); move(-1); }} aria-label="Imagem anterior" />
           <div className="gallery-lightbox__image" onClick={(event) => event.stopPropagation()}>
             <Image src={selected.src} alt={selected.alt} fill sizes="95vw" priority />
           </div>
           <div className="gallery-lightbox__caption"><span>{String(selected.id).padStart(2, "0")} / {selected.category}</span><p>{selected.alt}</p></div>
-          <button className="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" onClick={(event) => { event.stopPropagation(); move(1); }} aria-label="Próxima imagem">→</button>
+          <button className="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" onClick={(event) => { event.stopPropagation(); move(1); }} aria-label="Próxima imagem" />
         </div>
       )}
     </>

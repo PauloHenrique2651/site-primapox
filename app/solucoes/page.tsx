@@ -14,7 +14,7 @@ export default function SolucoesPage() {
             <span>01 / SOLUÇÃO PUBLICADA</span>
             <h2>Pintura eletrostática a pó</h2>
             <p>Cobertura uniforme, resistência e acabamento técnico para componentes metálicos.</p>
-            <b>Conhecer solução ↗</b>
+            <b>Conhecer solução <span className="icon icon--north-east" aria-hidden="true" /></b>
           </Link>
         </div>
       </section>
