@@ -1,0 +1,42 @@
+.brand {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .6rem;
+  flex-shrink: 0;
+}
+
+.plate {
+  display: block;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid rgba(7, 27, 51, .06);
+  border-radius: 14px;
+}
+
+.logo {
+  display: block;
+  width: 188px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand[data-compact="true"] .plate {
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.brand[data-compact="true"] .logo {
+  width: 136px;
+}
+
+.brand:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 5px;
+  border-radius: 12px;
+}
+
+@media (max-width: 800px) {
+  .brand[data-compact="true"] .logo {
+    width: 116px;
+  }
+}
