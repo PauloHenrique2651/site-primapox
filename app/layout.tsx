@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
+import "./responsive-refinements.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.primapox.com"),
