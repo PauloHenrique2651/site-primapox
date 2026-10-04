@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     template: "%s | Primapox",
   },
   description: "Pintura eletrostática a pó para componentes metálicos, com preparação controlada, cobertura uniforme e acabamento de alto padrão no Rio de Janeiro.",
+  icons: {
+    icon: { url: "/primapox-logo-oficial.png", type: "image/png" },
+    shortcut: "/primapox-logo-oficial.png",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
