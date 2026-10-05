@@ -32,7 +32,7 @@
 .footer:global(.site-footer) {
   scroll-margin-top: 78px;
   color: #17324d;
-  background: linear-gradient(180deg, #fff 0%, #f0f7ff 32%, #d7e7f8 64%, #94b4d8 100%);
+  background: linear-gradient(180deg, #fff 0%, #e9f2fc 32%, #c7ddf4 64%, #82a5cd 100%);
   border-top: 1px solid rgba(23, 66, 107, .12);
 }
 
@@ -50,7 +50,7 @@
 
 .footer :global(.footer-links a:hover),
 .footer :global(.site-footer__bottom a:hover) {
-  color: #7f1020;
+  color: #6f0f1a;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
