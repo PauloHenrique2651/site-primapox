@@ -9,6 +9,7 @@
 }
 
 .hero h1 { max-width: 740px; }
+.desktop-nav { gap: clamp(1rem, 1.65vw, 1.75rem); }
 .hero__content { max-width: 920px; padding-block: 0; }
 .hero__copy { max-width: 620px; margin-top: 1.65rem; }
 .hero__actions { margin-top: 2rem; }

@@ -1,0 +1,15 @@
+.brand {
+  width: 100%;
+  max-width: 340px;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand :global(.brand-mark .brand-mark__descriptor) {
+  color: #17324d;
+}

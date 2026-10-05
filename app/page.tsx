@@ -5,7 +5,7 @@ import { IndustrialGallery } from "@/components/IndustrialGallery";
 import { ProtectionExplorer } from "@/components/ProtectionExplorer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SectionHeading } from "@/components/SectionHeading";
-import { applications, benefits, processSteps } from "@/data/site";
+import { applications, benefits, company, processSteps } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -27,7 +27,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero__footer shell">
-          <span><b>+20 anos</b> de experiência</span>
+          <span><b>+{company.yearsOfExperience} anos</b> de experiência</span>
           <p><b>Controle técnico</b> em cada etapa</p>
           <span><b>Vigário Geral</b> · Rio de Janeiro</span>
         </div>
@@ -35,7 +35,7 @@ export default function HomePage() {
 
       <section className="evidence-strip" aria-label="Informações da Primapox">
         <div className="shell evidence-strip__grid">
-          <div><strong>+20</strong><span>Anos de atuação</span></div>
+          <div><strong>+{company.yearsOfExperience}</strong><span>Anos de atuação</span></div>
           <div><strong>02</strong><span>Famílias de resina</span></div>
           <div><strong>04</strong><span>Etapas controladas</span></div>
           <div className="evidence-strip__location"><strong>RJ</strong><span>Vigário Geral</span></div>

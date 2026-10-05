@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 import "./responsive-refinements.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <main id="conteudo">{children}</main>
         <SiteFooter />
+        <WhatsAppButton />
       </body>
     </html>
   );

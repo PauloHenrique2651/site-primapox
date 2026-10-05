@@ -7,14 +7,14 @@ export const metadata: Metadata = { title: "Soluções", description: "Soluçõe
 export default function SolucoesPage() {
   return (
     <>
-      <PageHero eyebrow="Primapox / Soluções" marker="SOLUÇÃO 01" title={<>Uma competência.<br /><em>Aplicações diversas.</em></>} copy="A oferta publicada reflete a capacidade comprovada da Primapox. Novas soluções entram no portfólio somente depois de validadas." />
+      <PageHero eyebrow="Primapox / Serviços" marker="PINTURA A PÓ" title={<>Uma competência.<br /><em>Aplicações diversas.</em></>} copy="Pintura eletrostática a pó com resinas híbrida e poliéster, preparação de superfície, aplicação, cura e controle do acabamento." />
       <section className="content-section">
         <div className="shell solution-listing">
           <Link href="/solucoes/pintura-eletrostatica-a-po">
-            <span>01 / SOLUÇÃO PUBLICADA</span>
+            <span>PINTURA / PREPARAÇÃO / ACABAMENTO</span>
             <h2>Pintura eletrostática a pó</h2>
-            <p>Cobertura uniforme, resistência e acabamento técnico para componentes metálicos.</p>
-            <b>Conhecer solução <span className="icon icon--north-east" aria-hidden="true" /></b>
+            <p>Benefícios, tipos de resina, materiais, aplicações e referência técnica da tinta poliéster.</p>
+            <b>Conhecer serviços <span className="icon icon--north-east" aria-hidden="true" /></b>
           </Link>
         </div>
       </section>

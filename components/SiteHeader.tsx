@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { BrandMark } from "@/components/BrandMark";
 import { navigation } from "@/data/site";
 
@@ -11,6 +11,12 @@ export function SiteHeader() {
   const quoteHref = pathname === "/" ? "#orcamento" : "/contato#orcamento";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const mobileNavigation = useRef<HTMLDetailsElement>(null);
+
+  const closeMenu = useCallback(() => {
+    if (mobileNavigation.current) mobileNavigation.current.open = false;
+    setOpen(false);
+  }, []);
 
   useEffect(() => {
     document.body.dataset.menuOpen = open ? "true" : "false";
@@ -18,6 +24,23 @@ export function SiteHeader() {
       delete document.body.dataset.menuOpen;
     };
   }, [open]);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || !mobileNavigation.current?.open) return;
+      closeMenu();
+      mobileNavigation.current?.querySelector("summary")?.focus();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [closeMenu]);
+
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 1100px)");
+    const onResize = () => { if (!mobile.matches) closeMenu(); };
+    mobile.addEventListener("change", onResize);
+    return () => mobile.removeEventListener("change", onResize);
+  }, [closeMenu]);
 
   useEffect(() => {
     const updateHeader = () => setScrolled(window.scrollY > 32);
@@ -29,7 +52,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
       <div className="site-header__inner shell">
-        <BrandMark compact onClick={() => setOpen(false)} />
+        <BrandMark compact onClick={closeMenu} />
         <nav className="desktop-nav" aria-label="Navegação principal">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href}>
@@ -40,31 +63,30 @@ export function SiteHeader() {
         <a className="header-cta" href={quoteHref}>
           Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" />
         </a>
-        <button
-          className="menu-button"
-          type="button"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          onClick={() => setOpen((current) => !current)}
+        <details
+          className="mobile-navigation"
+          ref={mobileNavigation}
+          onToggle={(event) => setOpen(event.currentTarget.open)}
         >
-          <span />
-          <span />
-        </button>
-      </div>
-      <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu">
-        <nav aria-label="Navegação mobile">
-          {navigation.map((item, index) => (
-            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
-              <span>0{index + 1}</span>
-              {item.label}
-            </Link>
-          ))}
-          <a className="mobile-menu__cta" href={quoteHref} onClick={() => setOpen(false)}>
-            <span>05</span>
-            Solicitar orçamento
-          </a>
-        </nav>
+          <summary className="menu-button" role="button" aria-controls="mobile-menu" aria-label={open ? "Fechar menu" : "Abrir menu"}>
+            <span />
+            <span />
+          </summary>
+          <div className="mobile-menu" id="mobile-menu">
+            <nav aria-label="Navegação mobile">
+              {navigation.map((item, index) => (
+                <Link key={item.href} href={item.href} onClick={closeMenu}>
+                  <span>0{index + 1}</span>
+                  {item.label}
+                </Link>
+              ))}
+              <a className="mobile-menu__cta" href={quoteHref} onClick={closeMenu}>
+                <span>{String(navigation.length + 1).padStart(2, "0")}</span>
+                Solicitar orçamento
+              </a>
+            </nav>
+          </div>
+        </details>
       </div>
     </header>
   );

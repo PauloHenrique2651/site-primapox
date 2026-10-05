@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { BrandMark } from "@/components/BrandMark";
+import { FooterBrand } from "@/components/FooterBrand";
 import { company, navigation } from "@/data/site";
+import { whatsappLink } from "@/data/whatsapp";
+import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer className={`site-footer ${styles.footer}`} id="rodape">
       <div className="shell site-footer__top">
         <div className="site-footer__brand">
-          <BrandMark />
+          <FooterBrand />
           <p>Pintura eletrostática a pó com preparação controlada, cobertura uniforme e acabamento de alto padrão.</p>
         </div>
         <div>
@@ -22,6 +24,7 @@ export function SiteFooter() {
           <div className="footer-links">
             <a href="tel:+552134487320">{company.phoneMain}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp · {company.whatsappLabel}</a>
             <span>{company.address}</span>
           </div>
         </div>

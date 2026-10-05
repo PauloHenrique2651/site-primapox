@@ -6,14 +6,52 @@
 }
 
 .plate {
+  position: relative;
   display: block;
 }
 
 .logo {
+  position: relative;
   display: block;
   width: 188px;
   height: auto;
   object-fit: contain;
+}
+
+.cloud {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.brand.contrast {
+  width: 260px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: .85rem;
+}
+
+.contrast .plate {
+  width: 100%;
+}
+
+.brand.contrast[data-custom-visual="true"] {
+  width: 100%;
+}
+
+.contrast .logo {
+  width: 100%;
+}
+
+.contrast :global(.brand-mark__descriptor) {
+  color: #e0eaf2;
+  opacity: 1;
+  font-size: .58rem;
+  line-height: 1.5;
+  letter-spacing: .14em;
+  text-align: left;
 }
 
 .brand[data-compact="true"] .plate {
