@@ -28,10 +28,10 @@ export function BrandMark({ compact = false, contrast = false, visual, onClick }
         )}
         <Image
           className={styles.logo}
-          src="/primapox-logo-oficial.png"
+          src="/brand/primapox-logo-rodape.png"
           alt="Primapox"
-          width={767}
-          height={325}
+          width={1672}
+          height={941}
           sizes={compact ? "(max-width: 800px) 116px, 136px" : contrast ? "260px" : "188px"}
           priority={compact}
           unoptimized
