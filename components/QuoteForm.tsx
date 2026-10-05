@@ -13,7 +13,7 @@ export function QuoteForm() {
 
   if (status === "sent") {
     return (
-      <div className="form-success" role="status">
+      <div className="form-success" id="orcamento" role="status">
         <span className="form-success__check" aria-hidden="true" />
         <h3>Escopo preparado.</h3>
         <p>A versão local não envia dados. Para falar agora, ligue para (21) 3448-7320 ou escreva para primapox@primapox.com.</p>
@@ -23,7 +23,7 @@ export function QuoteForm() {
   }
 
   return (
-    <form className="quote-form" onSubmit={handleSubmit}>
+    <form className="quote-form" id="orcamento" onSubmit={handleSubmit}>
       <div className="quote-form__grid">
         <label>
           <span>Nome *</span>

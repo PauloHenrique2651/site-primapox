@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ApplicationVisual } from "@/components/ApplicationVisual";
 import { ContactBand } from "@/components/ContactBand";
 import { PageHero } from "@/components/PageHero";
 import { applications } from "@/data/site";
@@ -13,7 +14,7 @@ export default function AplicacoesPage() {
         <div className="shell application-index">
           {applications.map((application, index) => (
             <article key={application.code}>
-              <div className={`application-index__code application-index__code--${application.tone}`}><span>{application.code}</span></div>
+              <ApplicationVisual className={`application-index__code application-index__code--${application.tone}`} image={application.image} alt={application.imageAlt} position={application.imagePosition} />
               <div><span>0{index + 1}</span><h2>{application.title}</h2><p>{application.description}</p></div>
             </article>
           ))}

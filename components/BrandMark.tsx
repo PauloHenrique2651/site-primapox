@@ -1,10 +1,11 @@
+import type { MouseEventHandler } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./BrandMark.module.css";
 
-export function BrandMark({ compact = false }: { compact?: boolean }) {
+export function BrandMark({ compact = false, onClick }: { compact?: boolean; onClick?: MouseEventHandler<HTMLAnchorElement> }) {
   return (
-    <Link className={`brand-mark ${styles.brand}`} data-compact={compact} href="/" aria-label="Primapox — página inicial">
+    <Link className={`brand-mark ${styles.brand}`} data-compact={compact} href="/#inicio" aria-label="Primapox — voltar ao início" onClick={onClick}>
       <span className={styles.plate}>
         <Image
           className={styles.logo}

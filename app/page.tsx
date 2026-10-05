@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ApplicationVisual } from "@/components/ApplicationVisual";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { IndustrialGallery } from "@/components/IndustrialGallery";
 import { ProtectionExplorer } from "@/components/ProtectionExplorer";
@@ -9,7 +10,7 @@ import { applications, benefits, processSteps } from "@/data/site";
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero" id="inicio">
         <video className="hero__video" autoPlay muted loop playsInline preload="auto" aria-hidden="true">
           <source src="/media/primapox-hero.mp4" type="video/mp4" />
         </video>
@@ -20,7 +21,7 @@ export default function HomePage() {
             <h1>Proteção que adere.<br /><em>Qualidade que permanece.</em></h1>
             <p className="hero__copy">Revestimento técnico para componentes metálicos, com cobertura uniforme, alta resistência e acabamento de alto padrão.</p>
             <div className="hero__actions">
-              <Link className="button button--red" href="/contato">Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" /></Link>
+              <a className="button button--red" href="#orcamento">Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" /></a>
               <Link className="button button--ghost" href="/galeria">Ver trabalhos <span className="icon" aria-hidden="true" /></Link>
             </div>
           </div>
@@ -98,11 +99,7 @@ export default function HomePage() {
           <div className="application-mosaic">
             {applications.map((application, index) => (
               <article className={`application-card application-card--${application.tone}`} key={application.code}>
-                <div className="application-card__visual" aria-hidden="true">
-                  <span>{application.code}</span>
-                  <i />
-                  <b>{index + 1}</b>
-                </div>
+                <ApplicationVisual className="application-card__visual" image={application.image} alt={application.imageAlt} position={application.imagePosition} />
                 <div className="application-card__copy">
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{application.title}</h3>
@@ -149,7 +146,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section quote-section" id="orcamento">
+      <section className="section quote-section">
         <div className="shell">
           <div className="quote-section__intro">
             <p className="eyebrow">07 — Novo projeto</p>

@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BrandMark } from "@/components/BrandMark";
 import { navigation } from "@/data/site";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const quoteHref = pathname === "/" ? "#orcamento" : "/contato#orcamento";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,7 +29,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
       <div className="site-header__inner shell">
-        <BrandMark compact />
+        <BrandMark compact onClick={() => setOpen(false)} />
         <nav className="desktop-nav" aria-label="Navegação principal">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href}>
@@ -34,9 +37,9 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link className="header-cta" href="/contato">
+        <a className="header-cta" href={quoteHref}>
           Solicitar orçamento <span className="icon icon--north-east" aria-hidden="true" />
-        </Link>
+        </a>
         <button
           className="menu-button"
           type="button"
@@ -57,10 +60,10 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link className="mobile-menu__cta" href="/contato" onClick={() => setOpen(false)}>
+          <a className="mobile-menu__cta" href={quoteHref} onClick={() => setOpen(false)}>
             <span>05</span>
             Solicitar orçamento
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
